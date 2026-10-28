@@ -11,7 +11,7 @@
 <link rel="icon" href="img/galia-icono.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Big+Shoulders+Display:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Big+Shoulders+Display:wght@800&family=Cormorant+Garamond:wght@600&family=Fraunces:opsz,wght@9..144,600&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#151821; --text:#2A2E3A; --muted:#5B6070; --line:#E3E6EE;
@@ -55,33 +55,40 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 .sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
 .sec-head h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.02em}
 
-/* galia case */
-.case{background:#0B0E16;color:#C9D1E3;border-radius:24px;padding:clamp(24px,5vw,56px);overflow:hidden}
-.case h3{color:#fff;font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.02em}
-.case .tag{display:inline-block;font-size:13px;font-weight:600;color:#19D9FF;background:rgba(25,217,255,.1);padding:5px 12px;border-radius:999px;margin-bottom:16px}
+/* casos */
+.cases{display:flex;flex-direction:column;gap:28px}
+.case{--cbg:#0B0E16;--ctext:#B8C1D6;--chead:#fff;--cmuted:#8D97AD;--cacc:#19D9FF;--csoft:rgba(25,217,255,.1);--cline:rgba(255,255,255,.08);
+  background:var(--cbg);color:var(--ctext);border-radius:24px;padding:clamp(24px,5vw,56px);overflow:hidden;scroll-margin-top:84px}
+.case.light{box-shadow:inset 0 0 0 1px var(--cline)}
+.case h3{color:var(--chead);font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.02em}
+.case .tag{display:inline-block;font-size:13px;font-weight:600;color:var(--cacc);background:var(--csoft);padding:5px 12px;border-radius:999px;margin-bottom:16px}
 .case-top{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.case-top .logo{width:88px;height:88px;border-radius:22px;display:grid;place-items:center;flex:0 0 auto}
 .case-top img{width:88px;height:88px;border-radius:22px}
-.case-top p{margin:8px 0 0;font-size:18px;color:#E6EBF5}
+.case-top p{margin:8px 0 0;font-size:18px;color:var(--chead);opacity:.9}
 .screens{display:flex;gap:16px;overflow-x:auto;padding:36px 0 12px;margin:0 calc(-1 * clamp(24px,5vw,56px));padding-left:clamp(24px,5vw,56px);padding-right:clamp(24px,5vw,56px);scroll-snap-type:x mandatory}
 .screens figure{margin:0;flex:0 0 220px;scroll-snap-align:start}
-.screens img{border-radius:22px;border:1px solid rgba(255,255,255,.08);width:220px;height:auto}
-.screens figcaption{font-size:13px;color:#8D97AD;margin-top:10px;text-align:center}
+.screens img{border-radius:22px;border:1px solid var(--cline);width:220px;height:auto}
+.screens.board figure{flex-basis:280px}
+.screens.board img{width:280px;border-radius:18px}
+.screens figcaption{font-size:13px;color:var(--cmuted);margin-top:10px;text-align:center}
 .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:32px}
-.case-grid h4{margin:0 0 8px;color:#fff;font-size:15px;font-weight:700;letter-spacing:.02em}
-.case-grid p,.case-grid li{margin:0;font-size:15.5px;color:#B8C1D6}
+.case-grid h4{margin:0 0 8px;color:var(--chead);font-size:15px;font-weight:700;letter-spacing:.02em}
+.case-grid p,.case-grid li{margin:0;font-size:15.5px;color:var(--ctext)}
 .case-grid ul{margin:0;padding-left:18px}
-
-/* other projects */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px;margin-top:28px}
-.card{border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
-.cover{height:200px;display:grid;place-items:center}
-.card .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px}
-.card h3{font-size:22px;font-weight:700}
-.meta{font-size:13.5px;color:var(--muted);font-weight:500}
-.card p{margin:0;font-size:15.5px}
-.card ul{margin:0;padding-left:18px;font-size:15.5px}
-.card li{margin-bottom:4px}
-
+.case-grid li+li{margin-top:4px}
+.index{display:flex;flex-wrap:wrap;gap:8px;margin-top:-8px;margin-bottom:28px}
+.index a{font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);color:var(--ink);text-decoration:none}
+.index a:hover{border-color:var(--ink)}
+.c-planazo{--cbg:#0F0F13;--ctext:#B7B7C3;--cmuted:#8A8A96;--cacc:#FFC83D;--csoft:rgba(255,200,61,.12)}
+.c-cotejo{--cbg:#FFFFFF;--ctext:#3F444D;--chead:#111214;--cmuted:#6B717B;--cacc:#0E9F57;--csoft:#E7F7EE;--cline:#E3E6EA}
+.c-joyas{--cbg:#0D0D0D;--ctext:#BDB9AF;--chead:#F5F2EA;--cmuted:#8F8B82;--cacc:#D4A63A;--csoft:rgba(212,166,58,.12);--cline:#262626}
+.c-vida{--cbg:#EEF3FB;--ctext:#33415C;--chead:#14213D;--cmuted:#6B7A97;--cacc:#2F5BB8;--csoft:#DCE6F8;--cline:#D6E0F1}
+.c-gusto{--cbg:#F2582F;--ctext:#FFE9DF;--chead:#fff;--cmuted:#FFD9C9;--cacc:#2A1A14;--csoft:#FFD23F;--cline:rgba(0,0,0,.08)}
+.c-gusto .screens img{box-shadow:0 0 0 2px rgba(255,255,255,.6);border:0}
+.c-joyas h3{font-family:'Cormorant Garamond',serif;font-weight:600}
+.c-vida h3{font-family:'Fraunces',serif;font-weight:600}
+.c-cotejo h3{font-family:'Big Shoulders Display',sans-serif;text-transform:uppercase;letter-spacing:.01em}
 /* about */
 .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px}
 .about h3{font-size:17px;font-weight:700;margin-bottom:8px}
@@ -125,11 +132,15 @@ footer p{max-width:560px}
 <section id="proyectos">
   <div class="wrap">
     <div class="sec-head">
-      <p class="label">Caso principal</p>
+      <p class="label">6 proyectos</p>
       <h2>Proyectos</h2>
     </div>
 
-    <article class="case" aria-labelledby="galia-t">
+    <nav class="index" aria-label="Proyectos">
+      <a href="#galia">GALIA</a><a href="#planazo">Planazo</a><a href="#cotejo">Cotejo</a><a href="#inventario">Inventario de joyería</a><a href="#plan-de-vida">Mi Plan de Vida</a><a href="#date-un-gusto">Date un gusto</a>
+    </nav>
+    <div class="cases">
+    <article class="case" id="galia" aria-labelledby="galia-t">
       <span class="tag">Producto propio · Beta en Android</span>
       <div class="case-top">
         <img src="img/galia-icono.png" alt="Ícono de la app GALIA: tarjetas apiladas con un destello">
@@ -176,65 +187,37 @@ footer p{max-width:560px}
       </div>
     </article>
 
-    <div class="grid">
-      <article class="card" aria-labelledby="cot-t">
-        <div class="cover" style="background:#FFFFFF;border-bottom:1px solid var(--line)" aria-hidden="true">
-          <div style="display:flex;align-items:center;gap:14px">
-            <svg width="56" height="56" viewBox="0 0 56 56"><circle cx="28" cy="28" r="24" fill="none" stroke="#111" stroke-width="4"/></svg>
-            <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:52px;color:#111;letter-spacing:.02em">COTEJO</span>
-          </div>
-        </div>
-        <div class="body">
-          <p class="meta">Producto propio · Diseño UI y marca · 2026</p>
-          <h3 id="cot-t">Cotejo · Partidos de fútbol</h3>
-          <p>App para armar o encontrar partidos cerca.</p>
-          <ul>
-            <li>Diseñé el flujo de registro y las pantallas principales.</li>
-            <li>Marca: logo de balón de contorno, logotipo en Big Shoulders Display y mascota animada.</li>
-          </ul>
-        </div>
-      </article>
 
-      <article class="card" aria-labelledby="joy-t">
-        <div class="cover" style="background:#0E0E0E" aria-hidden="true">
-          <svg width="80" height="80" viewBox="0 0 80 80"><path d="M40 8l32 32-32 32L8 40z" fill="none" stroke="#D4A63A" stroke-width="3"/><path d="M40 22l18 18-18 18-18-18z" fill="#D4A63A"/></svg>
-        </div>
-        <div class="body">
-          <p class="meta">Proyecto para cliente · App funcional · 2026</p>
-          <h3 id="joy-t">Inventario de joyería</h3>
-          <p>App móvil de inventario para una tienda de joyas.</p>
-          <ul>
-            <li>Muestra qué piezas hay, cuáles se agotaron, su costo y su precio de venta.</li>
-            <li>Paleta negro, blanco y dorado, acorde con el negocio.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="card" aria-labelledby="pv-t">
-        <div class="cover" style="background:#E8F0FC" aria-hidden="true">
-          <svg width="160" height="90" viewBox="0 0 160 90"><path d="M0 90l45-55 25 30 22-22 68 47z" fill="#2F5BB8"/><path d="M45 35l10 12-10-3-10 3z" fill="#fff"/><circle cx="128" cy="22" r="10" fill="#9DB8EC"/></svg>
-        </div>
-        <div class="body">
-          <p class="meta">Proyecto para cliente · App funcional · 2026</p>
-          <h3 id="pv-t">Mi Plan de Vida</h3>
-          <p>De un plan de vida en Excel a una app que funciona.</p>
-          <ul>
-            <li>Metas organizadas por área con avance visible.</li>
-            <li>Estilo claro con montañas y tonos azules para comunicar progreso.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="card" aria-labelledby="dug-t">
-        <div class="cover" style="background:#F2582F" aria-hidden="true">
-          <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:44px;color:#fff;letter-spacing:-.02em">Date un gusto</span>
-        </div>
-        <div class="body">
-          <p class="meta">Negocio familiar · Identidad de marca · 2026</p>
-          <h3 id="dug-t">Date un gusto · Marca vending</h3>
-          <p>Identidad para una máquina expendedora de snacks y bebidas (TCN 10C), construida a partir de la frase “Date un gusto”, con un estilo limpio y directo.</p>
-        </div>
-      </article>
+    <article class="case c-planazo" id="planazo" aria-labelledby="planazo-t">
+      <span class="tag">Producto propio · App móvil · En diseño</span>
+      <div class="case-top"><div class="logo" style="background:#1C1C23" aria-hidden="true"><svg width="62" height="39" viewBox="0 0 150 93" fill="none" stroke="#F4F4F6" stroke-linecap="round"><path d="M10 70 C 22 50, 30 40, 44 34" stroke-width="11"/><path d="M40 78 C 56 56, 66 44, 84 36" stroke-width="8"/><path d="M74 82 C 90 62, 100 50, 116 42" stroke-width="5"/><circle cx="134" cy="28" r="9" fill="#FFC83D" stroke="none"/></svg></div><div><h3 id="planazo-t">Planazo · Planes en Bogotá</h3><p>Tu plan en Bogotá, listo en un minuto.</p></div></div>
+      <div class="screens" tabindex="0" aria-label="Pantallas de Planazo, desliza para ver más"><figure><img src="img/planazo-inicio.jpg" alt="Pantalla de bienvenida de Planazo con el logo Ráfaga" loading="lazy" width="540" height="1170"><figcaption>Bienvenida</figcaption></figure><figure><img src="img/planazo-armar.jpg" alt="Formulario para elegir presupuesto, tiempo, compañía y gustos" loading="lazy" width="540" height="1170"><figcaption>Arma tu plan</figcaption></figure><figure><img src="img/planazo-plan.jpg" alt="Itinerario de cuatro paradas con horas y precios" loading="lazy" width="540" height="1170"><figcaption>Tu plan</figcaption></figure><figure><img src="img/planazo-guardados.jpg" alt="Lista de planes guardados en modo claro con rayas negras" loading="lazy" width="540" height="1170"><figcaption>Mis planes · modo claro</figcaption></figure></div>
+      <div class="case-grid"><div><h4>El problema</h4><p>Cuando hay tiempo libre, decidir qué hacer toma más que el plan mismo: buscar sitios, calcular la plata y cuadrar horarios.</p></div><div><h4>Mi rol</h4><p>Definición del producto, flujo para armar el plan, diseño de pantallas e identidad de marca.</p></div><div><h4>Decisiones de diseño</h4><ul><li>Cuatro preguntas para armar el plan: presupuesto, tiempo, compañía y gustos.</li><li>El resultado es una línea de tiempo con hora y costo de cada parada.</li><li>Cambiar una parada sin rehacer todo el plan.</li></ul></div><div><h4>Marca</h4><p>Logo “Ráfaga”: tres trazos de pincel tipo firma (las paradas) y un punto amarillo (el destino). Modo oscuro y modo claro con rayas negras.</p></div><div><h4>Estado</h4><p>Marca y pantallas principales diseñadas. Objetivo: lanzar en Play Store y App Store, empezando por Bogotá.</p></div></div>
+    </article>
+    <article class="case c-cotejo light" id="cotejo" aria-labelledby="cotejo-t">
+      <span class="tag">Producto propio · App móvil · En diseño</span>
+      <div class="case-top"><div class="logo" style="background:#111214" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="#fff" stroke-width="12"/></svg></div><div><h3 id="cotejo-t">Cotejo · Partidos de fútbol</h3><p>Arma tu partido o encuentra cupo cerca de ti.</p></div></div>
+      <div class="screens" tabindex="0" aria-label="Pantallas de Cotejo, desliza para ver más"><figure><img src="img/cotejo-bienvenida.jpg" alt="Pantalla de bienvenida de Cotejo sobre líneas de cancha" loading="lazy" width="540" height="1170"><figcaption>Bienvenida</figcaption></figure><figure><img src="img/cotejo-partidos.jpg" alt="Lista de partidos cercanos con cupos y precio" loading="lazy" width="540" height="1170"><figcaption>Partidos hoy</figcaption></figure><figure><img src="img/cotejo-detalle.jpg" alt="Cancha con jugadores confirmados y cupos libres" loading="lazy" width="540" height="1170"><figcaption>Detalle del partido</figcaption></figure><figure><img src="img/cotejo-armar.jpg" alt="Formulario para crear un partido" loading="lazy" width="540" height="1170"><figcaption>Armar partido</figcaption></figure></div>
+      <div class="case-grid"><div><h4>El problema</h4><p>Armar un partido depende de grupos de chat: siempre falta alguien y nadie sabe dónde hay cupo.</p></div><div><h4>Mi rol</h4><p>Flujo de registro, pantallas principales, logo, logotipo y mascota animada.</p></div><div><h4>Decisiones de diseño</h4><ul><li>Los cupos se ven en la cancha: círculos llenos son jugadores, punteados son cupos libres.</li><li>Precio por jugador visible desde la lista.</li><li>Crear un partido en dos pasos.</li></ul></div><div><h4>Marca</h4><p>Balón de contorno en negro, logotipo COTEJO en Big Shoulders Display y verde cancha como único color de acento.</p></div><div><h4>Estado</h4><p>Registro, pantallas principales y marca diseñados. Siguiente paso: prototipo funcional.</p></div></div>
+    </article>
+    <article class="case c-joyas" id="inventario" aria-labelledby="inventario-t">
+      <span class="tag">Proyecto para cliente · App funcional</span>
+      <div class="case-top"><div class="logo" style="background:#1C1C1C;box-shadow:inset 0 0 0 1px #2A2A2A" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 80 80"><path d="M40 8l32 32-32 32L8 40z" fill="none" stroke="#D4A63A" stroke-width="5"/><path d="M40 24l16 16-16 16-16-16z" fill="#D4A63A"/></svg></div><div><h3 id="inventario-t">Inventario de joyería</h3><p>Qué hay en vitrina, qué se agotó y cuánto deja cada pieza.</p></div></div>
+      <div class="screens" tabindex="0" aria-label="Pantallas de Inventario de joyería, desliza para ver más"><figure><img src="img/joyas-resumen.jpg" alt="Resumen con valor en vitrina, piezas, agotadas y categorías" loading="lazy" width="540" height="1170"><figcaption>Resumen</figcaption></figure><figure><img src="img/joyas-piezas.jpg" alt="Lista de piezas con estado de existencias" loading="lazy" width="540" height="1170"><figcaption>Piezas</figcaption></figure><figure><img src="img/joyas-detalle.jpg" alt="Costo, precio de venta, ganancia y unidades de un anillo" loading="lazy" width="540" height="1170"><figcaption>Detalle de pieza</figcaption></figure><figure><img src="img/joyas-agregar.jpg" alt="Formulario para agregar una pieza al inventario" loading="lazy" width="540" height="1170"><figcaption>Nueva pieza</figcaption></figure></div>
+      <div class="case-grid"><div><h4>El problema</h4><p>La tienda llevaba el inventario a mano: no era fácil saber qué se había agotado ni cuánto dejaba cada pieza.</p></div><div><h4>Mi rol</h4><p>Entender el negocio con el cliente, diseñar las pantallas y construir la app.</p></div><div><h4>Decisiones de diseño</h4><ul><li>Etiquetas de estado con color: en stock, quedan pocas y agotado.</li><li>Costo, precio y ganancia juntos en cada pieza.</li><li>Registrar una venta con un toque desde el detalle.</li></ul></div><div><h4>Marca</h4><p>Negro, blanco y dorado, con títulos en Cormorant Garamond para que se sienta como una joyería.</p></div><div><h4>Estado</h4><p>App funcional hecha para la tienda.</p></div></div>
+    </article>
+    <article class="case c-vida light" id="plan-de-vida" aria-labelledby="plan-de-vida-t">
+      <span class="tag">Proyecto para cliente · App funcional</span>
+      <div class="case-top"><div class="logo" style="background:#fff;box-shadow:inset 0 0 0 1px #D6E0F1" aria-hidden="true"><svg width="60" height="40" viewBox="0 0 160 90"><path d="M0 90l45-55 25 30 22-22 68 47z" fill="#2F5BB8"/><path d="M45 35l10 12-10-3-10 3z" fill="#fff"/><circle cx="128" cy="22" r="10" fill="#9DB8EC"/></svg></div><div><h3 id="plan-de-vida-t">Mi Plan de Vida</h3><p>De un plan en Excel a una app que muestra el avance.</p></div></div>
+      <div class="screens" tabindex="0" aria-label="Pantallas de Mi Plan de Vida, desliza para ver más"><figure><img src="img/vida-inicio.jpg" alt="Avance general del plan con montañas" loading="lazy" width="540" height="1170"><figcaption>Inicio</figcaption></figure><figure><img src="img/vida-areas.jpg" alt="Áreas con su porcentaje de avance" loading="lazy" width="540" height="1170"><figcaption>Áreas de vida</figcaption></figure><figure><img src="img/vida-meta.jpg" alt="Meta con anillo de progreso y lista de pasos" loading="lazy" width="540" height="1170"><figcaption>Detalle de meta</figcaption></figure><figure><img src="img/vida-nueva.jpg" alt="Formulario para crear una meta" loading="lazy" width="540" height="1170"><figcaption>Nueva meta</figcaption></figure></div>
+      <div class="case-grid"><div><h4>El problema</h4><p>El plan de vida vivía en una hoja de Excel: difícil de revisar en el celular y sin una forma clara de ver el progreso.</p></div><div><h4>Mi rol</h4><p>Convertir la estructura del Excel en una app: áreas, metas y pasos, con su diseño visual.</p></div><div><h4>Decisiones de diseño</h4><ul><li>Cada meta se divide en pasos pequeños para que se pueda avanzar.</li><li>El inicio muestra el siguiente paso, no solo porcentajes.</li><li>Un color por área para ubicarse rápido.</li></ul></div><div><h4>Marca</h4><p>Montañas y tonos azules para hablar de progreso; títulos en Fraunces para un tono cercano.</p></div><div><h4>Estado</h4><p>App funcional hecha a partir del plan en Excel del cliente.</p></div></div>
+    </article>
+    <article class="case c-gusto" id="date-un-gusto" aria-labelledby="date-un-gusto-t">
+      <span class="tag">Negocio familiar · Identidad de marca</span>
+      <div class="case-top"><div class="logo" style="background:#fff" aria-hidden="true"><svg width="56" height="30" viewBox="0 0 300 160"><path d="M24 40 C 90 140, 210 140, 276 40" fill="none" stroke="#F2582F" stroke-width="30" stroke-linecap="round"/></svg></div><div><h3 id="date-un-gusto-t">Date un gusto · Marca vending</h3><p>Snacks y bebidas frías, con una sonrisa.</p></div></div>
+      <div class="screens board" tabindex="0" aria-label="Pantallas de Date un gusto, desliza para ver más"><figure><img src="img/gusto-logo.jpg" alt="Logotipo Date un gusto con una sonrisa debajo" loading="lazy" width="1080" height="1350"><figcaption>Logotipo</figcaption></figure><figure><img src="img/gusto-maquina.jpg" alt="Máquina expendedora vestida con la marca" loading="lazy" width="1080" height="1350"><figcaption>Vinilo de la máquina</figcaption></figure><figure><img src="img/gusto-paleta.jpg" alt="Paleta de cinco colores y dos tipografías" loading="lazy" width="1080" height="1350"><figcaption>Color y tipografía</figcaption></figure><figure><img src="img/gusto-redes.jpg" alt="Publicación amarilla con el mensaje Te lo mereces" loading="lazy" width="1080" height="1350"><figcaption>Pieza para redes</figcaption></figure></div>
+      <div class="case-grid"><div><h4>El reto</h4><p>Darle personalidad a una máquina expendedora de snacks y bebidas (TCN 10C) para que la gente se detenga a comprar.</p></div><div><h4>Mi rol</h4><p>Concepto, logotipo, paleta, tipografía y aplicaciones en la máquina y en redes.</p></div><div><h4>Decisiones de diseño</h4><ul><li>La marca nace de la frase “Date un gusto” y la convierte en una sonrisa.</li><li>Naranja mandarina para que la máquina se vea de lejos.</li><li>Colores secundarios tomados de los mismos snacks.</li></ul></div><div><h4>Estado</h4><p>Identidad lista para aplicar en la máquina y en redes.</p></div></div>
+    </article>
     </div>
   </div>
 </section>
@@ -260,7 +243,7 @@ footer p{max-width:560px}
   <div class="wrap">
     <p class="label">Contacto</p>
     <h2>¿Trabajamos juntos?</h2>
-    <p>Busco empleo remunerado como diseñador UI/UX, de producto o de marca: puestos junior, trabajo remoto o contratos por proyecto.</p>
+    <p>Busco empleo como diseñador UI/UX, de producto o de marca (junior, remoto o por contrato). También hago proyectos por encargo: páginas web, apps, identidad de marca y estrategia para llegar a tus clientes.</p>
     <div class="ctas">
       <a class="btn primary" href="mailto:dannieste7@gmail.com">Escríbeme</a>
       <a class="btn ghost" href="https://github.com/danielcorrea45">GitHub</a>
